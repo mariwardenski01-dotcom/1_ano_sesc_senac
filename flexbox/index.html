@@ -63,6 +63,7 @@
           PARTE 1 - PROPRIEDADES DO FLEX CONTAINER
           São aplicadas ao elemento pai, responsável por organizar os itens.  
     =================================================== -->
+
         <header class="group-header">
             <span>Parte 1</span>
             <h2>Propriedades do Flex Container</h2>
@@ -74,6 +75,7 @@
            Define a direção do eixo principal e a ordem inicial dos itens.
            O id permite acessar esta seção pelo menu de navegação.
 =========================================== -->
+
         <section class="demo" id="flex-direction">
             <!-- Agrupa o título da propriedade e o botão que restaura o vaçor inicial. -->
              <div class="demo-heading">
@@ -93,11 +95,50 @@
                 data-* guarda o valor que será lido pelo JavaScript.
                 aria-pressed informa qual botão está ativo.
             -->
+
             <div class="buttons" role="group" aria-label="Valores de flex-direction">
               <button type="button" data-direction="row" aria-pressed="true">row</button>
               <button type="button" data-direction="row-reverse" aria-pressed="false">row-reverse</button>
               <button type="button" data-direction="column" aria-pressed="false">column</button>
               <button type="button" data-direction="column-reverse" aria-pressed="false">column-reverse</button>
+            </div>
+
+            <!--
+                Descrição atualizada pelo JavaScript conforme o botão escolhido.
+                aria-live="polite" permite a mudança para leitores de tela.
+            -->
+                <P class="property-description direction-description" aria-live="polite">
+                    Organiza os itens horizontalmente, da esquerda para a direita.
+                </P>
+            <!--
+               Área visual da demonstração.
+               A classe container recebe display:flex no CSS.
+               A segunda classe identifica a propriedade demonstrada.
+            -->
+            <div class="container direction-container" id="direction-container">
+                <span class="container-label">flex container</span>
+            <!-- Indicadores dos eixos; JavaScript atualiza as setas nesta seção. -->
+                <span class="axis axis-main direction-main-axis">Eixo principal →</span>
+                <span class="axis axis-cross direction-cross-axis">Eixo secundário ↓</span>
+            <!-- Cada elemento. item é um flex Item. Os números facilitam observar ordem e posição. -->
+               <div><span class="item">1</span></div>
+               <div><span class="item">2</span></div>
+               <div><span class="item">3</span></div>
+               <div><span class="item">4</span></div>
+            </div>
+
+            <!--
+                Mostra o CSS correspndente ao valor selecionado.
+                pre preserva espaços e quebras de linha; code identifica código-fonte.
+                O botão usa data-copy-property e data-copy-target para copiar o resultado.
+            -->
+            <div class="code-wrapper">
+                <pre class="code"><code>.container {
+    display:felx;
+    flex-direction: <strong class="direction-value" aria-live="polite"></strong>;            
+}</code></pre>
+                <button type="button" class="cpoy-button" data-copy-property="flex-direction"
+                data-copy-target=".direction-value">Copiar CSS</button>
             </div>
         </section>
 
